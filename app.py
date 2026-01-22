@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 
 # MongoDB URI from Render Environment Variable
-MONGO_URI = os.environ.get("MONGO_URI")
+MONGO_URI = "mongodb+srv://agarwalkritika218_db_user:yncuizyQ16cHGWTu@cluster0.g9jiia3.mongodb.net/event_management?retryWrites=true&w=majority"
 
 client = MongoClient(MONGO_URI)
 db = client["event_management"]
@@ -37,3 +37,4 @@ def register():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
+
