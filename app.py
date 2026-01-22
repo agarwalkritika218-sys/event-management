@@ -1,38 +1,97 @@
 from flask import Flask, request, jsonify
 from pymongo import MongoClient
+import os
 
 app = Flask(__name__)
 
-MONGO_URI = "mongodb+srv://agarwalkritika218_db_user:yncuizyQ16cHGWTu@cluster0.g9jiia3.mongodb.net/event_management?retryWrites=true&w=majority"
+# MongoDB URI (Render Environment Variable se aayega)
+MONGO_URI = os.environ.get("MONGO_URI")
+
 client = MongoClient(MONGO_URI)
 
 db = client["event_management"]
 users_collection = db["users"]
 events_collection = db["events"]
 
+# =========================
+# HOME ROUTE (TEST)
+# =========================
 @app.route("/")
 def home():
     return "Backend running successfully"
 
-# 🔹 REGISTER API
+# =========================
+# REGISTER API
+# =========================
 @app.route("/register", methods=["POST"])
 def register():
     data = request.json
 
-    user = {
-        "name": data.get("name"),
-        "email": data.get("email"),
-        "password": data.get("password")
-    }
+    name = data.get("name")
+    email = data.get("email")
+    password = data.get("password")
 
-    users_collection.insert_one(user)
+    if not name or not email or not password:
+        return jsonify({"message": "All fields are required"}), 400
 
-    return jsonify({
-        "message": "User registered successfully"
+    users_collection.insert_one({
+        "name": name,
+        "email": email,
+        "password": password
     })
 
-import os
+    return jsonify({"message": "User registered successfully"})
 
+# =========================
+# LOGIN API
+# =========================
+@app.route("/login", methods=["POST"])
+def login():
+    data = request.json
+
+    email = data.get("email")
+    password = data.get("password")
+
+    user = users_collection.find_one({
+        "email": email,
+        "password": password
+    })
+
+    if not user:
+        return jsonify({"message": "Invalid email or password"}), 401
+
+    return jsonify({
+        "message": "Login successful",
+        "user": {
+            "name": user["name"],
+            "email": user["email"]
+        }
+    })
+
+# =========================
+# ADD EVENT API
+# =========================
+@app.route("/add-event", methods=["POST"])
+def add_event():
+    data = request.json
+
+    title = data.get("title")
+    date = data.get("date")
+    location = data.get("location")
+
+    if not title or not date or not location:
+        return jsonify({"message": "All fields are required"}), 400
+
+    events_collection.insert_one({
+        "title": title,
+        "date": date,
+        "location": location
+    })
+
+    return jsonify({"message": "Event added successfully"})
+
+# =========================
+# RUN APP
+# =========================
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+    app.run()
