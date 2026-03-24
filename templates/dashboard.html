@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Eventify Dashboard</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, sans-serif;
+}
+
+body{
+background:#f5f6fa;
+}
+
+/* DASHBOARD LAYOUT */
+
+.dashboard{
+display:flex;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+width:220px;
+height:100vh;
+background:#6a1b9a;
+color:white;
+padding:30px;
+}
+
+.sidebar h2{
+margin-bottom:40px;
+text-align:center;
+}
+
+.sidebar a{
+display:block;
+color:white;
+text-decoration:none;
+margin:15px 0;
+padding:8px;
+border-radius:6px;
+transition:0.3s;
+}
+
+.sidebar a:hover{
+background:rgba(255,255,255,0.2);
+}
+
+/* MAIN CONTENT */
+
+.main-content{
+flex:1;
+padding:40px;
+}
+
+.main-content h1{
+margin-bottom:10px;
+color:#333;
+}
+
+/* HEADING */
+
+.main-content h1{
+font-size:50px;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.main-content p{
+font-size:18px;
+color:#666;
+}
+
+
+/* DIAMOND IMAGE GRID */
+
+.diamond-grid{
+display:flex;
+flex-direction:row;
+align-items:center;
+justify-content:center;
+gap:40px;
+margin-top:140px;   /* image niche aa jayegi */
+}
+
+
+/* DIAMOND IMAGE */
+
+.diamond{
+width:200px;
+height:200px;
+overflow:hidden;
+transform:rotate(45deg);
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+transition:0.4s;
+}
+
+.diamond img{
+width:100%;
+height:100%;
+object-fit:cover;
+transform:rotate(-45deg) scale(1.4);
+}
+
+.diamond:hover{
+transform:rotate(45deg) scale(1.1);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.sidebar{
+display:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<h2>Eventify</h2>
+
+<a href="{{ url_for('wedding') }}">Wedding</a>
+<a href="{{ url_for('concerts') }}">Concerts</a>
+ <a href="{{ url_for('cultural') }}">Cultural</a>
+ <a href="{{ url_for('parties') }}">Parties</a>
+<a href="{{ url_for('catering') }}">Catering</a>
+<a href="{{ url_for('budget') }}">Budget</a>
+<a href="{{ url_for('booking') }}">Booking</a>
+
+</div>
+
+
+<!-- MAIN -->
+
+<div class="main-content">
+
+<h1>Welcome to Eventify 💜</h1>
+
+<p>Plan your events professionally and beautifully.</p>
+
+<div class="diamond-grid">
+
+<div class="diamond">
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=900">
+</div>
+
+<div class="diamond">
+<img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=900">
+</div>
+
+<div class="diamond">
+<img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?w=900">
+</div>
+
+<div class="diamond">
+<img src="https://img.freepik.com/free-vector/people-celebrating-holi-festival_52683-56305.jpg?semt=ais_hybrid&w=740&q=80
+">
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
