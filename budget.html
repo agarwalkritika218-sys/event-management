@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Event Budget | Eventify</title>
+
+<style>
+
+body{
+font-family:Segoe UI;
+background:#f5f5f5;
+padding:40px;
+}
+.back-btn{
+    display:block;
+    margin:20px 0;
+    background:#6a1b9a;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    font-size:16px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.back-btn:hover{
+    background:#4a148c;
+}
+/* headings */
+
+h1{
+margin-top:50px;
+color:#6a1b9a;
+}
+
+/* tables */
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+margin-top:20px;
+margin-bottom:40px;
+box-shadow:0 6px 20px rgba(0,0,0,0.1);
+}
+
+th{
+text-align:left;
+padding:15px;
+border-bottom:2px solid #ddd;
+}
+
+td{
+padding:15px;
+border-bottom:1px solid #eee;
+}
+
+/* catering packages */
+
+.packages{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+margin-top:30px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card h2{
+color:#6a1b9a;
+margin-bottom:10px;
+}
+
+.budget{
+background:#f3e5f5;
+padding:8px;
+border-radius:8px;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+ul{
+padding-left:18px;
+}
+
+li{
+margin-bottom:6px;
+}
+
+.multi-cuisine{
+  margin-top:50px;
+}
+
+.multi-cuisine h2{
+  color:#6a1b9a;
+  margin-bottom:20px;
+}
+
+.starter-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  margin-top:20px;
+}
+
+.starter-card{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.1);
+}
+
+.starter-card h3{
+  color:#d35400;
+  margin-bottom:12px;
+}
+
+.starter-card ul{
+  padding-left:18px;
+}
+
+.starter-card li{
+  margin-bottom:8px;
+}
+
+.budget-table{
+  width:100%;
+  border-collapse:collapse;
+  background:white;
+  margin-top:25px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.1);
+}
+
+.budget-table th,
+.budget-table td{
+  padding:15px;
+  text-align:left;
+  border-bottom:1px solid #eee;
+}
+
+.budget-table th{
+  background:#6a1b9a;
+  color:white;
+}
+
+.note-box{
+  background:#f3e5f5;
+  padding:15px;
+  border-radius:10px;
+  margin-top:20px;
+  font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- WEDDING -->
+
+<h1>💒 Wedding Event Budget</h1>
+
+<table>
+
+<tr>
+<th>Wedding Type</th>
+<th>Estimated Budget</th>
+</tr>
+
+<tr>
+<td>Destination Wedding</td>
+<td>₹15,00,000 – ₹50,00,000</td>
+</tr>
+
+<tr>
+<td>Traditional Wedding</td>
+<td>₹5,00,000 – ₹15,00,000</td>
+</tr>
+
+<tr>
+<td>Theme Wedding</td>
+<td>₹3,00,000 – ₹10,00,000</td>
+</tr>
+
+<tr>
+<td>Luxury Wedding</td>
+<td>₹20,00,000 – ₹1,00,00,000+</td>
+</tr>
+
+</table>
+
+
+<!-- CONCERT -->
+
+<h1>🎤 Concert Event Budget</h1>
+
+<table>
+
+<tr>
+<th>Concert Type</th>
+<th>Estimated Budget</th>
+</tr>
+
+<tr>
+<td>Live Music Concert</td>
+<td>₹2,00,000 – ₹10,00,000</td>
+</tr>
+
+<tr>
+<td>DJ Night</td>
+<td>₹80,000 – ₹3,00,000</td>
+</tr>
+
+<tr>
+<td>College Concert</td>
+<td>₹1,50,000 – ₹6,00,000</td>
+</tr>
+
+<tr>
+<td>Celebrity Show</td>
+<td>₹10,00,000 – ₹50,00,000</td>
+</tr>
+
+</table>
+
+
+<!-- CULTURAL -->
+
+<h1>🎭 Cultural Event Budget</h1>
+
+<table>
+
+<tr>
+<th>Cultural Type</th>
+<th>Estimated Budget</th>
+</tr>
+
+<tr>
+<td>Dance Performances</td>
+<td>₹50,000 – ₹2,00,000</td>
+</tr>
+
+<tr>
+<td>Music Festival</td>
+<td>₹2,00,000 – ₹8,00,000</td>
+</tr>
+
+<tr>
+<td>Drama & Theatre</td>
+<td>₹80,000 – ₹3,00,000</td>
+</tr>
+
+<tr>
+<td>College Cultural Fest</td>
+<td>₹3,00,000 – ₹10,00,000</td>
+</tr>
+
+</table>
+
+
+<!-- BIRTHDAY -->
+
+<h1>🎉 Birthday Party Budget</h1>
+
+<table>
+
+<tr>
+<th>Birthday Type</th>
+<th>Estimated Budget</th>
+</tr>
+
+<tr>
+<td>Kids Birthday Party</td>
+<td>₹20,000 – ₹1,00,000</td>
+</tr>
+
+<tr>
+<td>Theme Birthday Party</td>
+<td>₹40,000 – ₹2,00,000</td>
+</tr>
+
+<tr>
+<td>Adult Birthday Party</td>
+<td>₹50,000 – ₹3,00,000</td>
+</tr>
+
+<tr>
+<td>Luxury Birthday Party</td>
+<td>₹2,00,000 – ₹8,00,000</td>
+</tr>
+
+</table>
+
+
+<!-- CATERING -->
+
+<h1>🍽 Catering Food Packages</h1>
+
+<div class="packages">
+
+<div class="card">
+
+<h2>Silver Package</h2>
+<div class="budget">₹300 / person</div>
+
+<ul>
+<li>Veg Spring Roll</li>
+<li>Paneer Butter Masala</li>
+<li>Dal Tadka</li>
+<li>Veg Biryani</li>
+<li>Butter Naan</li>
+<li>Gulab Jamun</li>
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<h2>Gold Package</h2>
+<div class="budget">₹500 / person</div>
+
+<ul>
+<li>Paneer Tikka</li>
+<li>Veg Manchurian</li>
+<li>Dal Makhani</li>
+<li>Veg Fried Rice</li>
+<li>Butter Naan</li>
+<li>Ice Cream</li>
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<h2>Premium Package</h2>
+<div class="budget">₹800 / person</div>
+
+<ul>
+<li>Paneer Chilli</li>
+<li>Veg Momos</li>
+<li>Malai Kofta</li>
+<li>Shahi Paneer</li>
+<li>Garlic Naan</li>
+<li>Rasmalai</li>
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<h2>Deluxe Package</h2>
+<div class="budget">₹1200 / person</div>
+
+<ul>
+<li>Paneer Tikka</li>
+<li>Veg Hakka Noodles</li>
+<li>Kaju Curry</li>
+<li>Dal Makhani</li>
+<li>Veg Biryani</li>
+<li>Chocolate Cake</li>
+</ul>
+
+</div>
+
+</div>
+<!-- MULTI-CUISINE STARTER PLATE -->
+
+<div class="multi-cuisine">
+  <h1>🍽 Multi-Cuisine Starter Plate</h1>
+
+  <div class="starter-grid">
+    <div class="starter-card">
+      <h3>Chinese</h3>
+      <ul>
+        <li>Chilli Paneer</li>
+        <li>Veg Spring Roll</li>
+        <li>Veg Manchurian</li>
+        <li>Crispy Noodles</li>
+      </ul>
+    </div>
+
+    <div class="starter-card">
+      <h3>Italian</h3>
+      <ul>
+        <li>White Sauce Pasta</li>
+        <li>Bruschetta</li>
+        <li>Cheese Garlic Bread</li>
+        <li>Stuffed Mushrooms</li>
+      </ul>
+    </div>
+
+    <div class="starter-card">
+      <h3>Mexican</h3>
+      <ul>
+        <li>Nachos with Cheese</li>
+        <li>Veg Tacos</li>
+        <li>Quesadilla</li>
+        <li>Mexican Corn Cups</li>
+      </ul>
+    </div>
+
+    <div class="starter-card">
+      <h3>Continental</h3>
+      <ul>
+        <li>Veg Cutlet</li>
+        <li>Cheese Balls</li>
+        <li>Grilled Vegetables</li>
+        <li>French Fries</li>
+      </ul>
+    </div>
+  </div>
+
+  <table class="budget-table">
+    <tr>
+      <th>Package Type</th>
+      <th>Items Included</th>
+      <th>Budget</th>
+    </tr>
+    <tr>
+      <td>Basic Mix Plate</td>
+      <td>2 Cuisine + 2 to 3 Items</td>
+      <td>₹180 - ₹250 / plate</td>
+    </tr>
+    <tr>
+      <td>Standard Mix Plate</td>
+      <td>3 Cuisine + 4 to 5 Items</td>
+      <td>₹250 - ₹400 / plate</td>
+    </tr>
+    <tr>
+      <td>Premium Mix Plate</td>
+      <td>4 Cuisine + 6 to 8 Items</td>
+      <td>₹400 - ₹700 / plate</td>
+    </tr>
+    <tr>
+      <td>Luxury Event Package</td>
+      <td>Live Counters + Premium Starters</td>
+      <td>₹700 - ₹1200 / plate</td>
+    </tr>
+  </table>
+
+  <div class="note-box">
+    Multi-cuisine starter packages start from ₹200 per person and go up depending on variety and service style.
+  </div>
+  <!-- ✅ BACK BUTTON -->
+<button onclick="goBack()" class="back-btn">⬅ Back</button>
+</div>
+<script>
+function goBack(){
+    window.history.back();
+}
+</script>
+
+
+</body>
+</html>
