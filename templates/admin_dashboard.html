@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f0ff;
+    margin: 0;
+}
+
+/* Header */
+.admin-header {
+    background: linear-gradient(135deg, #6a1b9a, #9c27b0);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Container */
+.admin-container {
+    width: 90%;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Back button */
+.back-btn {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 8px 15px;
+    background: #6a1b9a;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    background: #4a148c;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #6a1b9a;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background: #f3e5f5;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="admin-header">
+    <h1>Admin Dashboard</h1>
+    <p>Booking List Management Panel</p>
+</div>
+
+<div class="admin-container">
+
+    <!-- Back Button -->
+    <button onclick="history.back()" class="back-btn">⬅ Back</button>
+
+    <h2>All Bookings</h2>
+
+    <table>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Event Type</th>
+            <th>Event Date</th>
+            <th>Guests</th>
+            <th>Venue</th>
+            <th>catering</th>
+            <th>Requirements</th>
+            <th>Advance Amount</th>
+            
+
+        </tr>
+
+        {% for b in bookings %}
+        <tr>
+            <td>{{ b.get("fullName", "") }}</td>
+            <td>{{ b.get("email", "") }}</td>
+            <td>{{ b.get("phone", "") }}</td>
+            <td>{{ b.get("eventType", "") }}</td>
+            <td>{{ b.get("eventDate", "") }}</td>
+            <td>{{ b.get("guests", "") }}</td>
+            <td>{{ b.get("venue", "") }}</td>
+            <td>{{ b.get("catering", "") }}</td>
+            <td>{{ b.get("requirements", "") }}</td>
+           <td>
+    <b>₹{{ b.get("amount", 0) }}</b><br>
+
+    {% if b.get("payment") == "Done" %}
+        <span style="color:green;">Paid</span>
+    {% else %}
+        <span style="color:red;">Pending</span>
+    {% endif %}
+</td>
+
+        
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+</body>
+</html>
