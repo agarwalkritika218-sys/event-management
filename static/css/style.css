@@ -549,28 +549,34 @@ body {
 }
 
 /* Diamond Grid Right Side */
-.diamond-grid {
-    width: 50%;
-    display: grid;
-    grid-template-columns: repeat(2, 180px);
-    gap: 40px;
-    transform: rotate(45deg);
+.diamond-grid{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    transform: none;
+    margin-top: 30px;
 }
 
-/* Diamond Shape */
-.diamond {
-    width: 180px;
-    height: 180px;
+.diamond{
+    width: 500px;
+    height: 280px;
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 24px;
+    transform: none;
+    margin: 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.10);
 }
 
-.diamond img {
+.diamond img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: rotate(-45deg) scale(1.4);
+    transform: none;
+    display: block;
 }
+
 
 /* Main Content */
 .content {
