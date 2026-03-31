@@ -132,12 +132,12 @@ display:block;
 </head>
 
 <body>
-
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
 <div class="dashboard">
 
 <!-- SIDEBAR -->
 
-<div class="sidebar">
+<div class="sidebar" id="sidebar">
 
 <h2>Eventify</h2>
 
@@ -184,6 +184,10 @@ display:block;
 </div>
 
 </div>
-
+<script>
+function toggleMenu(){
+    document.getElementById("sidebar").classList.toggle("active");
+}
+</script>
 </body>
 </html>
