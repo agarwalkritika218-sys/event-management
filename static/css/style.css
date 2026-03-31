@@ -763,93 +763,103 @@ body {
 }
 
 /* =========================
-   MOBILE RESPONSIVE FINAL
+   SIDEBAR DEFAULT (DESKTOP)
+========================= */
+
+.dashboard{
+    display: flex;
+}
+
+.sidebar{
+    width: 220px;
+    height: 100vh;
+    background: #6a1b9a;
+    color: white;
+    padding: 30px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar h2{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.sidebar a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 15px 0;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content{
+    margin-left: 220px;
+    width: calc(100% - 220px);
+    padding: 30px;
+}
+
+/* =========================
+   HAMBURGER BUTTON
+========================= */
+
+.menu-btn{
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 26px;
+    background: #6a1b9a;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    z-index: 1100;
+    cursor: pointer;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
 ========================= */
 
 @media (max-width: 768px){
 
-    .dashboard{
-        display:flex;
-        flex-direction:row;
-        min-height:100vh;
+    /* Sidebar hidden by default */
+    .sidebar{
+        transform: translateX(-100%);
+    }
+
+    /* When active → show */
+    .sidebar.active{
+        transform: translateX(0);
+    }
+
+    /* Content full width */
+    .main-content{
+        margin-left: 0;
+        width: 100%;
+        padding: 80px 20px 20px;
+    }
+}
+
+/* =========================
+   DESKTOP FIX
+========================= */
+
+@media (min-width: 769px){
+
+    .menu-btn{
+        display: none;
     }
 
     .sidebar{
-        width:110px;
-        min-width:110px;
-        height:100vh;
-        position:fixed;
-        left:0;
-        top:0;
-        padding:18px 10px;
-        overflow-y:auto;
-    }
-
-    .sidebar h2{
-        font-size:18px;
-        text-align:center;
-        margin-bottom:20px;
-    }
-
-    .sidebar a{
-        display:block;
-        font-size:13px;
-        text-align:center;
-        margin:12px 0;
-        padding:6px 4px;
-    }
-
-    .main-content{
-        margin-left:110px;
-        width:calc(100% - 110px);
-        padding:20px 12px;
-        text-align:center;
-    }
-
-    .main-content h1{
-        font-size:42px;
-        line-height:1.2;
-        margin-bottom:10px;
-    }
-
-    .main-content p{
-        font-size:16px;
-        line-height:1.4;
-        margin-bottom:20px;
-    }
-
-    .diamond-grid{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        gap:18px;
-        margin-top:25px;
-    }
-
-    .diamond{
-        width:220px;
-        height:110px;
-        transform:none;
-        overflow:hidden;
-        border-radius:20px;
-    }
-
-    .diamond img{
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        transform:none;
-        display:block;
-    }
-
-    .work-image{
-        flex-direction:column;
-    }
-
-    .work-image img{
-        width:90%;
-        margin:10px auto;
-        display:block;
-        transform:none;
+        transform: translateX(0);
     }
 }
