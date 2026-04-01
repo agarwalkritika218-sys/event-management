@@ -259,6 +259,16 @@ footer {
     border-radius: 6px;
     border: 1px solid #ccc;
 }
+.register-form input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    height: 45px;          /* 🔥 height fix */
+    font-size: 16px;
+    color: #333;
+    background: #fff;
+    appearance: auto;
+    -webkit-appearance: auto;
+}
 
 .register-form button {
     width: 100%;
