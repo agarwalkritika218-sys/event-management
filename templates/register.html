@@ -38,7 +38,9 @@
             <option>Other</option>
         </select>
 
-        <input type="date" name="dob" class="date-input" required>
+      <input type="text" name="dob" placeholder="Birthday"
+           onfocus="(this.type='date')" 
+           onblur="if(!this.value)this.type='text'" required>
 
         <div class="password-box">
     <input type="password" name="password" id="password" placeholder="Create Password" required>
